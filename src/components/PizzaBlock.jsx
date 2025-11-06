@@ -1,9 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 
   
 
 function PizzaBlock(props) {
+  const [pizzaCount, setPizzaCount] = React.useState(0);
 
+  const onClickAdd = () => {
+    setPizzaCount(pizzaCount + 1);
+  };
+
+  console.log('PizzaBlock props:', props);
 
   return (
     <div className="pizza-block">
@@ -26,7 +32,7 @@ function PizzaBlock(props) {
       </div>
       <div className="pizza-block__bottom">
         <div className="pizza-block__price">от {props.price} ₽</div>
-        <button  className="button button--outline button--add">
+        <button onClick={onClickAdd} className="button button--outline button--add">
           <svg
             width="12"
             height="12"
@@ -40,7 +46,7 @@ function PizzaBlock(props) {
             />
           </svg>
           <span>Добавить</span>
-          <i>0</i>
+          <i>{pizzaCount}</i>
         </button>
       </div>
     </div>

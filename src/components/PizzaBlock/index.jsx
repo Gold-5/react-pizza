@@ -59,3 +59,5 @@ function PizzaBlock({ title, price, imageUrl, sizes, types }) {
   );
 }
 export default PizzaBlock;
+
+/*      */

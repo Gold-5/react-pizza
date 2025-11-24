@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Categories({value, onChangeCategory}) {
-  console.log(value);
+
 
 
   const categories = [
@@ -17,11 +17,11 @@ function Categories({value, onChangeCategory}) {
   return (
     <div className="categories">
       <ul>
-        {categories.map((categoryName, index) => (
+        {categories.map((categoryName, i) => (
           <li
-            key={index}
-            onClick={() => onChangeCategory(index)}
-            className={value === index ? 'active' : ''}
+            key={i}
+            onClick={() => onChangeCategory(i)}
+            className={value === i ? 'active' : ''}
           >
             {categoryName}
           </li>
